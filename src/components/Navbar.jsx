@@ -35,14 +35,14 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost text-xl md:text-3xl font-bold">Book Vibe</Link>
+                    <Link to='/' className="btn btn-ghost text-lg md:text-3xl font-bold">Book Vibe</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 md:text-base">
                         {navLinks}
                     </ul>
                 </div>
-                <div className="navbar-end gap-2">
+                <div className="navbar-end md:gap-2">
                     <a className="btn btn-xs sm:btn-sm md:btn-md bg-green-500 hover:bg-green-700 text-white">Sign In</a>
                     <a className="btn btn-xs sm:btn-sm md:btn-md bg-blue-400 hover:bg-blue-600 text-white">Sign Up</a>
                 </div>

@@ -15,20 +15,25 @@ const BookDetails = () => {
     // console.log(book);
     const { bookId, bookName, author, image, rating, category, tags, publisher, yearOfPublishing, totalPages, review } = book;
     const handleRead = () => {
-        const isExist = saveData('readList','wishlist', bookId);
-        if (!isExist) {
+        const cases = saveData('readList', 'wishlist', bookId);
+        console.log(cases);
+        if (cases === 'r1') {
             toast.success('Book added to read list.');
         }
-        else {
+        else if (cases === 'wr') {
             toast.error('You have already read this book.');
         }
     }
     const handleWishlist = () => {
-        const isExist = saveData('wishlist', bookId);
-        if (!isExist) {
+        const cases = saveData('wishlist', 'readList', bookId);
+        console.log(cases);
+        if (cases === 'w1') {
             toast.success('Book added to wishlist.');
         }
-        else {
+        else if (cases === 'w2') {
+            toast.error('You have already read this book.');
+        }
+        else if (cases === 'wr') {
             toast.error('This book already added to wishlist.');
         }
     }
