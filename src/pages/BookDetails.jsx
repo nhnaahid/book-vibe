@@ -1,6 +1,9 @@
 
 // import PropTypes from 'prop-types';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveData } from '../utility/localstorage';
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -11,6 +14,24 @@ const BookDetails = () => {
     const book = books.find(book => book.bookId === idInt)
     // console.log(book);
     const { bookId, bookName, author, image, rating, category, tags, publisher, yearOfPublishing, totalPages, review } = book;
+    const handleRead = () => {
+        const isExist = saveData('readList','wishlist', bookId);
+        if (!isExist) {
+            toast.success('Book added to read list.');
+        }
+        else {
+            toast.error('You have already read this book.');
+        }
+    }
+    const handleWishlist = () => {
+        const isExist = saveData('wishlist', bookId);
+        if (!isExist) {
+            toast.success('Book added to wishlist.');
+        }
+        else {
+            toast.error('This book already added to wishlist.');
+        }
+    }
     return (
         <div className='mt-16 flex flex-col md:flex-row justify-between md:items-center gap-5 lg:gap-0 items-stretch'>
             <div className='w-full lg:w-2/5 bg-base-200 rounded-xl p-2 lg:p-0'>
@@ -42,11 +63,22 @@ const BookDetails = () => {
                     <p>Rating: <span className='font-bold ml-[102px]'>{rating}</span></p>
                 </div>
                 <div className='mt-3 space-x-2'>
-                    <a className="btn btn-xs sm:btn-sm md:btn-md  hover:bg-green-500 border border-gray-500">Read</a>
-                    <a className="btn btn-xs sm:btn-sm md:btn-md bg-blue-400 hover:bg-blue-600 text-white">Wishlist</a>
+                    <a onClick={handleRead} className="btn btn-xs sm:btn-sm md:btn-md  hover:bg-green-500 border border-gray-500">Read</a>
+                    <a onClick={handleWishlist} className="btn btn-xs sm:btn-sm md:btn-md bg-blue-400 hover:bg-blue-600 text-white">Wishlist</a>
                 </div>
             </div>
-
+            <ToastContainer
+                position="top-right"
+                autoClose={1500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     );
 };
