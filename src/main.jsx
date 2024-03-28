@@ -14,10 +14,12 @@ import Home from './pages/Home';
 import BookDetails from './pages/BookDetails';
 import Read from './components/Read';
 import Wishlist from './components/Wishlist';
+import ErrorPage from './pages/ErrorPage';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

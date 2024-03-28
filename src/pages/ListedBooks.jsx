@@ -28,8 +28,8 @@ const ListedBooks = () => {
 
             <div className="mt-10">
                 <div role="tablist" className="tabs tabs-lifted justify-start">
-                    <Link to={``} onClick={() => setTabIndex(0)} role="tab" className={`tab ${tabIndex == 0 ? 'tab-active' : ''} font-bold`}>Read Books</Link>
-                    <Link to={`wishlist`} onClick={() => setTabIndex(1)} role="tab" className={`tab ${tabIndex == 1 ? 'tab-active' : ''} font-bold`}>Wishlist Books</Link>
+                    <Link to="" onClick={() => setTabIndex(0)} role="tab" className={`tab ${tabIndex == 0 ? 'tab-active' : ''} font-bold`}>Read Books</Link>
+                    <Link to="wishlist" onClick={() => setTabIndex(1)} role="tab" className={`tab ${tabIndex == 1 ? 'tab-active' : ''} font-bold`}>Wishlist Books</Link>
                 </div>
             </div>
             <Outlet></Outlet>
