@@ -16,4 +16,5 @@ A platform where users can discover, explore, and engage with the collection of 
 - View the overall details of each book.
 - Statistical representation of the books already read.
 - Responsive design.
+- Add your books to favorite.
 
