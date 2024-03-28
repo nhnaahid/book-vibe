@@ -39,6 +39,8 @@ const saveData = (keySelf, keyOther, value) => {
             // return 'clicked: read && item not in read'
             return 'r1';
         }
+        if (keySelf === 'favorite')
+            return 'f';
         // return 'clicked: wishlist && item not in wishlist or read'
         return 'w1';
     }

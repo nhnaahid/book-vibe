@@ -4,6 +4,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveData } from '../utility/localstorage';
+import { MdFavoriteBorder } from "react-icons/md";
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -37,6 +38,15 @@ const BookDetails = () => {
             toast.error('This book already added to wishlist.');
         }
     }
+    const handleFavorite = () => {
+        const cases= saveData('favorite','', bookId);
+        if (cases === 'f') {
+            toast.success('Book added to Favorite.');
+        }
+        else if (cases === 'wr') {
+            toast.error('You have already added this book to favorite.');
+        }
+    }
     return (
         <div className='mt-16 flex flex-col md:flex-row justify-between md:items-center gap-5 lg:gap-0 items-stretch'>
             <div className='w-full lg:w-2/5 bg-base-200 rounded-xl p-2 lg:p-0'>
@@ -46,7 +56,12 @@ const BookDetails = () => {
             </div>
             <div className='w-full lg:w-1/2 p-2 lg:p-0'>
                 <div className='space-y-3 border-b pb-3'>
-                    <h1 className="text-3xl font-bold font-playfair">{bookName}</h1>
+                    <div className='flex items-center gap-2'>
+                        <h1 className="text-3xl font-bold font-playfair">{bookName}</h1>
+                        <div className='tooltip mt-1' data-tip="Add to Favorite" >
+                            <MdFavoriteBorder onClick={handleFavorite} className='text-2xl cursor-pointer' />
+                        </div>
+                    </div>
                     <p className='font-bold'>By: {author}</p>
                 </div>
                 <p className='border-b py-3 mb-3 font-bold'>{category}</p>

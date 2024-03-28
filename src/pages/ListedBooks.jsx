@@ -13,7 +13,7 @@ const ListedBooks = () => {
     return (
         <div className="mt-16 flex flex-col gap-4">
             <div className="bg-base-200 rounded-xl">
-                <h1 className="text-3xl font-bold text-center p-1 md:p-4">Books</h1>
+                <h1 className="text-3xl font-bold text-center p-1 md:p-4 font-playfair">Books</h1>
             </div>
 
             {/* Sort by section */}

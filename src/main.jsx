@@ -56,7 +56,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/favorites',
-        element: <Favorites></Favorites>
+        element: <Favorites></Favorites>,
+        loader: () => fetch('../books.json')
       },
       {
         path: '/faq',
