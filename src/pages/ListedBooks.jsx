@@ -17,7 +17,7 @@ const ListedBooks = () => {
             </div>
 
             {/* Sort by section */}
-            <div className="dropdown mx-auto">
+            <div className="dropdown mx-auto mt-5">
                 <div tabIndex={0} role="button" className="btn m-1 bg-green-500 hover:bg-green-700 text-white">Sort By <IoIosArrowDown /></div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-44 md:w-52">
                     <li><Link >Rating</Link></li>
@@ -26,7 +26,7 @@ const ListedBooks = () => {
                 </ul>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-7">
                 <div role="tablist" className="tabs tabs-lifted justify-start">
                     <Link to="" onClick={() => setTabIndex(0)} role="tab" className={`tab ${tabIndex == 0 ? 'tab-active' : ''} font-bold`}>Read Books</Link>
                     <Link to="wishlist" onClick={() => setTabIndex(1)} role="tab" className={`tab ${tabIndex == 1 ? 'tab-active' : ''} font-bold`}>Wishlist Books</Link>
