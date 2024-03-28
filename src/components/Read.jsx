@@ -15,6 +15,9 @@ const Read = () => {
             setStoredReadBooks(storedReadBooksDetails);
         }
     }, [books])
+    // const sortedBooks = [...storedReadBooks].sort((a, b) => b.totalPages - a.totalPages);
+    // console.log(sortedBooks);
+    // setStoredReadBooks(sortedBooks);
     return (
         <div>
             {

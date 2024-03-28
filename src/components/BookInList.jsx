@@ -22,9 +22,9 @@ const BookInList = ({ book }) => {
                 <div className='flex flex-col md:flex-row md:items-center md:gap-5'>
                     <div className='flex items-center gap-2'>
                         <p className='font-bold my-3'>Tag</p>
-                        <div className='flex items-center gap-2'>
+                        <div className='flex items-center gap-1'>
                             {
-                                tags.map(tag => <p className='bg-green-50 text-green-500 font-semibold px-2 rounded-lg'>{tag}</p>)
+                                tags.map(tag => <p className='bg-green-50 text-green-500 font-semibold px-2 rounded-lg text-sm md:text-base'>{tag}</p>)
                             }
                         </div>
                     </div>
