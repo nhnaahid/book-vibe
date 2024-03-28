@@ -17,14 +17,15 @@ const Favorites = () => {
     }, [books])
     return (
         <div className="mt-16">
-            <div className="bg-base-200 rounded-xl">
-                <h1 className="text-3xl font-bold text-center p-1 md:p-4 font-playfair">Favorite Books</h1>
+            <div className="w-full md:w-2/3 text-center mx-auto space-y-3 mt-16">
+                <h1 className="text-3xl font-bold font-playfair">Favorite Books</h1>
+                <p className='text-sm text-gray-500'>Start your literary journey today with our handpicked selection of favorite books, <br /> waiting to be discovered at your fingertips.</p>
             </div>
             <div className="mt-12">
-            {
-                storedFavoriteBooks.map(book => <BookInList key={book.bookId} book={book}></BookInList>)
-            }
-        </div>
+                {
+                    storedFavoriteBooks.map(book => <BookInList key={book.bookId} book={book}></BookInList>)
+                }
+            </div>
         </div>
     );
 };
