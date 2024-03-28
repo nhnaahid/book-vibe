@@ -21,6 +21,18 @@ const Navbar = () => {
             background: 'none',
             fontWeight: isActive ? 'bolder' : 'bold'
         })}>Pages to Read</NavLink></li>
+        <li><NavLink to='/favorites' style={({ isActive }) => ({
+            color: isActive ? '#23BE0A' : '',
+            border: isActive ? '1px solid #23BE0A' : '',
+            background: 'none',
+            fontWeight: isActive ? 'bolder' : 'bold'
+        })}>Favorites</NavLink></li>
+        <li><NavLink to='/faq' style={({ isActive }) => ({
+            color: isActive ? '#23BE0A' : '',
+            border: isActive ? '1px solid #23BE0A' : '',
+            background: 'none',
+            fontWeight: isActive ? 'bolder' : 'bold'
+        })}>FAQ</NavLink></li>
     </>
 
     return (
