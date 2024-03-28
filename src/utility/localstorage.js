@@ -1,3 +1,4 @@
+
 const getStoredData = (key) => {
     const storedData = localStorage.getItem(key);
     if (storedData) {

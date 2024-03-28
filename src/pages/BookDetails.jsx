@@ -59,7 +59,6 @@ const BookDetails = () => {
                             tags.map(tag => <p className='bg-green-50 text-green-500 font-semibold px-2 rounded-lg'>{tag}</p>)
                         }
                     </div>
-
                 </div>
                 <div className='space-y-3 mt-2'>
                     <p>Number of Pages: <span className='font-bold ml-5'>{totalPages}</span></p>
