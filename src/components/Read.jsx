@@ -4,9 +4,11 @@ import { getStoredData } from "../utility/localstorage";
 import BookInList from "./BookInList";
 
 
-const Read = () => {
+const Read = ({ handleRating }) => {
     const [storedReadBooks, setStoredReadBooks] = useState([]);
+    // const [sortBy, setSortBy] = useState('');
     const books = useLoaderData();
+    console.log(handleRating);
     useEffect(() => {
         const storedReadBooksId = getStoredData('readList');
         if (books.length > 0) {
@@ -15,9 +17,11 @@ const Read = () => {
             setStoredReadBooks(storedReadBooksDetails);
         }
     }, [books])
-    // const sortedBooks = [...storedReadBooks].sort((a, b) => b.totalPages - a.totalPages);
-    // console.log(sortedBooks);
-    // setStoredReadBooks(sortedBooks);
+    // setSortBy(handleRating);
+    // if (sortBy === 'rating') {
+    //     const sortedBooks = [...storedReadBooks].sort((a, b) => b.rating - a.rating);
+    //     setStoredReadBooks(sortedBooks);
+    // }
     return (
         <div>
             {
