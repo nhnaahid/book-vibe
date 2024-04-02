@@ -1,26 +1,20 @@
-import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import { getStoredData } from "../utility/localstorage";
+import { useContext } from "react";
 import BookInList from "./BookInList";
+import { ListedBooksContext } from "../pages/ListedBooks";
 
 
 const Wishlist = () => {
-    const [storedWishlistBooks, setStoredWishlistBooks] = useState([]);
-    const books = useLoaderData();
-    useEffect(() => {
-        const storedWishlistBooksId = getStoredData('wishlist');
-        if (books.length > 0) {
-            const storedWishlistBooksDetails = books.filter(book => storedWishlistBooksId.includes(book.bookId));
-            // console.log(storedWishlistBooksDetails);
-            setStoredWishlistBooks(storedWishlistBooksDetails);
-        }
-    }, [books])
+
+    const { storedWishlistBooks } = useContext(ListedBooksContext);
+    console.log(storedWishlistBooks);
+
     return (
-        <div>
-            {
-                storedWishlistBooks.map(book => <BookInList key={book.bookId} book={book}></BookInList>)
-            }
-        </div>
+
+            <div>
+                {
+                    storedWishlistBooks.map(book => <BookInList key={book.bookId} book={book}></BookInList>)
+                }
+            </div>
     );
 };
 
